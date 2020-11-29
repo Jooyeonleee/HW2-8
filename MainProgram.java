@@ -108,18 +108,4 @@ public class MainProgram {
     	else return -a;
     	
     }
-    
-    public int pow(int a, int b) {
-    	if(a==0) return 0;
-    	else if(a==1 || b==0) return 1;
-    	int res=1;
-    	for(int i=0; i<b;i++) res *= a;
-    	return res;
-    }
-    
-    public int absolute(int a) {
-    	if(a>=0) return a;
-    	else return -a;
-    	
-    }
 }
