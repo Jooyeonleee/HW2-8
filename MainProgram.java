@@ -49,6 +49,10 @@ public class MainProgram {
         		System.out.println("please choose 1 or 2");
         	}
         }
+      
+        else if(studentID == 1813725)
+        	hw_1813725();
+
         else
         {
             System.out.println("To be developed...\n");
@@ -81,6 +85,65 @@ public class MainProgram {
  		   System.out.println("result: "+equiSequence(a, d, n));
  	   }
  	}
+    
+
+    public void hw_1813725() {
+    	Scanner sc = new Scanner(System.in);
+	   
+    	System.out.println("\n[StudentID:1813725]");
+    	System.out.println("1. Calculate factorial");
+    	System.out.println("2. Calculate sum of geometric series");
+	   
+	   	System.out.print("Enter the menu : ");
+	   	int menu = sc.nextInt();
+	   
+	   	switch (menu) {
+	   		case 1:
+	   			while (true){
+	   				System.out.print("Enter a positive integer: ");
+	   				int a = sc.nextInt();
+	   				if(a>0) {
+	   					System.out.println("result: "+ Factorial(a)+"\n");
+	   					break;
+	   				}
+	   				else
+	   					System.out.println("Only positive integers can be entered.");
+	   			}
+	   			break;
+		   
+	   		case 2:
+	   			while (true) {
+	   				System.out.print("Enter two numbers : ");
+	   				float a = sc.nextFloat(); 
+	   				float b = sc.nextFloat();
+	   				
+	   				if(b>=1.0||b<=-1.0)
+	   					System.out.println("The range of second argument is that absolute value of second argument is less than 1.");
+	   				else {
+	   					System.out.println("result: "+ SumofGS(a,b)+"\n");
+	   					break;
+	   				}
+	   			}
+	   			break;
+		   
+	   		default:
+	   			System.out.println("Choose 1 or 2");
+	   	}
+    }
+
+    public long Factorial(int a) {
+		long result=1;
+		int i;
+		for(i=1;i<=a;i++)
+			result=result*i;
+		return result;
+	}
+
+	public float SumofGS(float a, float b) {
+		float result;
+		result=a/(1-b);
+		return result;
+	}
     
     public int round1(int x) {
  	   int first = x % 10;
