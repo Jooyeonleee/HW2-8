@@ -60,8 +60,8 @@ public class MainProgram {
  	   Scanner scan = new Scanner(System.in);
  	   
  	   System.out.println("[StudentID:1814382]");
- 	   System.out.println("1. Calcualte 일의 자리에서 반올림하기");
- 	   System.out.println("2. Calcualte 등차수열의 항의 값 구하기");
+ 	   System.out.println("1. Calculate the rounded value at units");
+ 	   System.out.println("2. Calculate the value of a term in the arithmetic progression");
  	   
  	   System.out.println("Enter your numer : ");
  	   int menu = scan.nextInt();
@@ -74,11 +74,11 @@ public class MainProgram {
  		   break;
  		   
  	   case 2:
- 		   System.out.println("순서대로 초항, 등차, 항의 개수를 입력하세요(예시: 3 5 4) : ");
+ 		   System.out.println("Enter the first term, common difference, and the number of terms in order. (ex, 3 5 4)");
  		   int a = scan.nextInt(); 
  		   int d = scan.nextInt();
  		   int n = scan.nextInt();
- 		   System.out.println("초항이 "+a+"이고 등차가 "+d+"인 수열의 "+n+"번째 항의 값은 : "+equiSequence(a, d, n));
+ 		   System.out.println("result: "+equiSequence(a, d, n));
  	   }
  	}
     
