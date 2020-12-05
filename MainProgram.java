@@ -53,6 +53,8 @@ public class MainProgram {
         else if(studentID == 1813725)
         	hw_1813725();
 
+        else if(studentID==1813705)
+        	hw_1813705(studentID);
         else
         {
             System.out.println("To be developed...\n");
@@ -171,4 +173,45 @@ public class MainProgram {
     	else return -a;
     	
     }
+    
+    public void hw_1813705(int id) {
+    	Scanner scanner = new Scanner(System.in);
+    	System.out.println("[Studen ID : "+id+"]"); //choi so hyun
+    	System.out.println("1. Calculate Square Root"); //sqrt
+    	System.out.println("2. Calculate Mod"); // mod
+    	System.out.println("Enter menu number : ");
+    	int menu=scanner.nextInt();
+    	switch(menu) {
+    	case 1://floor
+    	{
+        	System.out.println("Enter number : ");
+        	int num=scanner.nextInt();
+        	System.out.println("square root is "+calculateSqrt(num));
+        	break;
+    	}
+    	case 2:{
+        	System.out.println("Enter two integers (x / y) : ");
+        	int num1=scanner.nextInt();
+        	int num2=scanner.nextInt();
+        	System.out.println("result is "+calculateMod(num1, num2));
+        	break;
+    	}
+    	default:
+    		System.out.println("You entered wrong number, try again");
+    	}
+	}
+
+	public double calculateSqrt(int num) {
+    	double x=10;
+    	for(int i=0;i<10;i++)
+	    {
+	        x = ( x + ( num / x ) ) / 2;
+	    }
+    	return x;
+	}
+	public int calculateMod(int num1, int num2) {
+    	int result;
+    	result=num1 % num2;
+    	return result;
+	}
 }
