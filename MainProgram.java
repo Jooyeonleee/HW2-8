@@ -55,6 +55,10 @@ public class MainProgram {
 
         else if(studentID==1813705)
         	hw_1813705(studentID);
+        
+        else if(studentID == 1813753)
+        	hw_1813753();
+
         else
         {
             System.out.println("To be developed...\n");
@@ -214,4 +218,53 @@ public class MainProgram {
     	result=num1 % num2;
     	return result;
 	}
+	
+	public void hw_1813753(){
+		Scanner s = new Scanner(System.in);
+
+		System.out.println("[Student ID: 1813753]");
+		System.out.println("1. Calculate circle area");
+		System.out.println("2. Calculate minimum number");
+
+		System.out.print("Enter menu number: ");
+		int menu = s.nextInt();
+		
+		switch(menu) {
+		case 1:{
+			System.out.print("Enter radius: ");
+			double radius=s.nextInt();
+			System.out.println("반지름이"+radius +"인 원의 면적: "+CircleArea(radius));
+			break;
+			}
+		case 2:{
+			System.out.print("Enter first number: ");
+			int num1 = s.nextInt();
+			System.out.print("Enter second number: ");
+			int num2 = s.nextInt();
+			minnum(num1,num2);
+			break;
+		}
+		default:
+			System.out.println("You entered wrong number. Choose 1 or 2");
+		}
+	}
+	public double CircleArea(double radius) {
+		double area;
+		final double PI=3.141592;
+		area = PI * radius * radius;
+		return area;
+	}
+
+	public void minnum(int num1,int num2) {
+		if (num1<num2) {
+			System.out.println("minimum number: "+ num1);
+			}
+		else if (num1>num2) {
+			System.out.println("minimum number: "+ num2);
+			}
+		else if (num1==num2){
+			System.out.println("same number: "+ num1);
+			}
+	}
+
 }
