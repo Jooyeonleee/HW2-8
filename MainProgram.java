@@ -233,7 +233,12 @@ public class MainProgram {
 		case 1:{
 			System.out.print("Enter radius: ");
 			double radius=s.nextInt();
-			System.out.println("반지름이"+radius +"인 원의 면적: "+CircleArea(radius));
+			if (radius<=0) {
+				System.out.println("Radius should be a positive number.");
+			}
+			else {
+				System.out.println("The area of a circle is " +CircleArea(radius));
+			}
 			break;
 			}
 		case 2:{
@@ -255,7 +260,7 @@ public class MainProgram {
 		return area;
 	}
 
-	public void minnum(int num1,int num2) {
+	public void minnum(double num1,double num2) {
 		if (num1<num2) {
 			System.out.println("minimum number: "+ num1);
 			}
