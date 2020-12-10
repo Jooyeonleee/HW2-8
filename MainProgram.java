@@ -246,7 +246,7 @@ public class MainProgram {
 			int num1 = s.nextInt();
 			System.out.print("Enter second number: ");
 			int num2 = s.nextInt();
-			minnum(num1,num2);
+			System.out.println("minimum number: " + minnum(num1,num2));
 			break;
 		}
 		default:
@@ -260,16 +260,13 @@ public class MainProgram {
 		return area;
 	}
 
-	public void minnum(double num1,double num2) {
-		if (num1<num2) {
-			System.out.println("minimum number: "+ num1);
-			}
-		else if (num1>num2) {
-			System.out.println("minimum number: "+ num2);
-			}
-		else if (num1==num2){
-			System.out.println("same number: "+ num1);
-			}
+	public double minnum(double num1,double num2) {
+		if (num1-num2<0)
+		    return num1;
+		else if (num1-num2>0)
+		    return num2;
+		else
+		    return num1;
 	}
 
 }
