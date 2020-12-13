@@ -59,8 +59,8 @@ public class MainProgram {
         else if(studentID == 1813753)
         	hw_1813753();
 
-		else if(studentID == 1814686)
-			showMenu_1814686();
+        else if(studentID == 1814686)
+        	showMenu_1814686();
 
         else
         {
