@@ -59,6 +59,9 @@ public class MainProgram {
         else if(studentID == 1813753)
         	hw_1813753();
 
+		else if(studentID == 1814686)
+			showMenu_1814686();
+
         else
         {
             System.out.println("To be developed...\n");
@@ -267,6 +270,54 @@ public class MainProgram {
 		    return num2;
 		else
 		    return num1;
+	}
+
+	public void showMenu_1814686(){
+		System.out.println("[Student ID: 1814686]");
+		System.out.println("1. Calculate factorial");
+		System.out.println("2. Calculate max");
+		System.out.print("Enter menu number: ");
+		Scanner scanner = new Scanner(System.in);
+		int menu = scanner.nextInt();
+
+		switch(menu){
+			case 1:
+				System.out.print("Enter a positive integer: ");
+				int num = scanner.nextInt();
+				if(num <= 0){
+					System.out.println("Only positive integers allowed.");
+				}
+				else{
+					System.out.println("Calculated factorial is " + calFactorial(num));
+				}
+				break;
+			case 2:
+				System.out.print("Enter two different integers: ");
+				int num1 = scanner.nextInt();
+				int num2 = scanner.nextInt();
+				if(num1 == num2){
+					System.out.println("Please enter two different integers.");
+				}
+				else{
+					System.out.println("Calculated max is "+ calMax(num1, num2));
+				}
+				break;
+			default:
+				System.out.println("Wrong menu number!");
+		}
+	}
+
+	public int calFactorial(int num){
+		int fac = 1;
+		for (int i = num; i >= 1; i--) {
+			fac = fac * i;
+		}
+		return fac;
+	}
+
+	public int calMax(int num1, int num2){
+		if(num1 > num2) return num1;
+		else return num2;
 	}
 
 }
