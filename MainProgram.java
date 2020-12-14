@@ -233,7 +233,7 @@ public class MainProgram {
 		int menu = s.nextInt();
 		
 		switch(menu) {
-		case 1:{
+		case 1:{ //calculate circle area
 			System.out.print("Enter radius: ");
 			double radius=s.nextInt();
 			if (radius<=0) {
@@ -244,7 +244,7 @@ public class MainProgram {
 			}
 			break;
 			}
-		case 2:{
+		case 2:{  //calculate minimum number
 			System.out.print("Enter first number: ");
 			int num1 = s.nextInt();
 			System.out.print("Enter second number: ");
