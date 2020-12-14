@@ -49,18 +49,21 @@ public class MainProgram {
         		System.out.println("please choose 1 or 2");
         	}
         }
-      
+
         else if(studentID == 1813725)
         	hw_1813725();
 
         else if(studentID==1813705)
         	hw_1813705(studentID);
-        
+
         else if(studentID == 1813753)
         	hw_1813753();
 
         else if(studentID == 1814686)
         	showMenu_1814686();
+
+          else if(studentID == 1814516)
+            hw_1814516();
 
         else
         {
@@ -71,41 +74,41 @@ public class MainProgram {
     }
     public void run_1814382() {
  	   Scanner scan = new Scanner(System.in);
- 	   
+
  	   System.out.println("[StudentID:1814382]");
  	   System.out.println("1. Calculate the rounded value at units");
  	   System.out.println("2. Calculate the value of a term in the arithmetic progression");
- 	   
+
  	   System.out.println("Enter your numer : ");
  	   int menu = scan.nextInt();
- 	   
+
  	   switch (menu) {
  	   case 1:
  		   System.out.println("Enter your number(type : int) : ");
  		   int x = scan.nextInt();
  		   System.out.println("result: "+round1(x));
  		   break;
- 		   
+
  	   case 2:
  		   System.out.println("Enter the first term, common difference, and the number of terms in order. (ex, 3 5 4)");
- 		   int a = scan.nextInt(); 
+ 		   int a = scan.nextInt();
  		   int d = scan.nextInt();
  		   int n = scan.nextInt();
  		   System.out.println("result: "+equiSequence(a, d, n));
  	   }
  	}
-    
+
 
     public void hw_1813725() {
     	Scanner sc = new Scanner(System.in);
-	   
+
     	System.out.println("\n[StudentID:1813725]");
     	System.out.println("1. Calculate factorial");
     	System.out.println("2. Calculate sum of geometric series");
-	   
+
 	   	System.out.print("Enter the menu : ");
 	   	int menu = sc.nextInt();
-	   
+
 	   	switch (menu) {
 	   		case 1:
 	   			while (true){
@@ -119,13 +122,13 @@ public class MainProgram {
 	   					System.out.println("Only positive integers can be entered.");
 	   			}
 	   			break;
-		   
+
 	   		case 2:
 	   			while (true) {
 	   				System.out.print("Enter two numbers : ");
-	   				float a = sc.nextFloat(); 
+	   				float a = sc.nextFloat();
 	   				float b = sc.nextFloat();
-	   				
+
 	   				if(b>=1.0||b<=-1.0)
 	   					System.out.println("The range of second argument is that absolute value of second argument is less than 1.");
 	   				else {
@@ -134,7 +137,7 @@ public class MainProgram {
 	   				}
 	   			}
 	   			break;
-		   
+
 	   		default:
 	   			System.out.println("Choose 1 or 2");
 	   	}
@@ -153,7 +156,7 @@ public class MainProgram {
 		result=a/(1-b);
 		return result;
 	}
-    
+
     public int round1(int x) {
  	   int first = x % 10;
  	   int ten = x - first;
@@ -162,11 +165,11 @@ public class MainProgram {
  	   else
  		   return (ten+10);
     }
-    
+
     public int equiSequence(int a, int d, int n) {
  	   return a + d * (n - 1);
     }
-    
+
     public int pow(int a, int b) {
     	if(a==0) return 0;
     	else if(a==1 || b==0) return 1;
@@ -174,13 +177,13 @@ public class MainProgram {
     	for(int i=0; i<b;i++) res *= a;
     	return res;
     }
-    
+
     public int absolute(int a) {
     	if(a>=0) return a;
     	else return -a;
-    	
+
     }
-    
+
     public void hw_1813705(int id) {
     	Scanner scanner = new Scanner(System.in);
     	System.out.println("[Studen ID : "+id+"]"); //choi so hyun
@@ -221,7 +224,7 @@ public class MainProgram {
     	result=num1 % num2;
     	return result;
 	}
-	
+
 	public void hw_1813753(){
 		Scanner s = new Scanner(System.in);
 
@@ -231,7 +234,7 @@ public class MainProgram {
 
 		System.out.print("Enter menu number: ");
 		int menu = s.nextInt();
-		
+
 		switch(menu) {
 		case 1:{ //calculate circle area
 			System.out.print("Enter radius: ");
@@ -319,5 +322,51 @@ public class MainProgram {
 		if(num1 > num2) return num1;
 		else return num2;
 	}
+
+  public void hw_1814516() {
+    Scanner scan = new Scanner(System.in);
+
+    System.out.println("[Student ID : 1814516]");
+    System.out.println("1. Calculate absolute number");
+    System.out.println("2. Calculate power");
+    System.out.print("Enter menu number : ");
+
+    int menuNum = scan.nextInt();
+
+    if(menuNum == 1)
+    {
+      System.out.print("Enter number : ");
+      int num = scan.nextInt();
+      System.out.println("result is "+absoluteNumber(num));
+    }
+    else if(menuNum == 2)
+    {
+      System.out.print("Enter two number : ");
+      int base = scan.nextInt();
+      int power = scan.nextInt();
+      System.out.println("result is "+powerNumber(base, power));
+    }
+
+    else {
+      System.out.println("It's wrong answer. You can choose 1 or 2.");
+    }
+  }
+
+  public int absoluteNumber(int num) {
+    if(num >= 0)
+      return num;
+    else
+      return (-1) *  num;
+  }
+
+  public int powerNumber(int base, int power) {
+    int i;
+    int sum = 1;
+    if(power == 0) return 1;
+    for(i = 0; i < power; i++) {
+      sum *= base;
+    }
+    return sum;
+  }
 
 }
